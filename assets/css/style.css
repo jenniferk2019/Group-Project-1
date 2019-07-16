@@ -17,9 +17,8 @@ body {
     font-family: 'Notable', sans-serif;
     font-size: xx-large;
     font-weight: bold;
-    background: url(../images/Fork-adn-Knife_1.gif);
-    background-position: center;
-    background-size: cover;
+    background: url(../images/top_pic.gif);
+    background-size: contain;
 }
 
 .search-box{
@@ -53,8 +52,8 @@ body {
     align-items: center;
     width: 200px;
     height: 50px;
-    background: url(../images/fire2.gif);
-    background-position: right;
+    background: url(../images/fire-2.gif);
+    background-position: center;
     border-radius: 999px;
     font-size: large;
     font-weight: bold;
@@ -68,7 +67,7 @@ body {
     align-items: center;
     width: 200px;
     height: 50px;
-    background: url(../images/bgcookbook.jpg);
+    background: url(../images/bgif.gif);
     background-position: center;
     background-size: cover;
     border-radius: 999px;
