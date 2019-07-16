@@ -2,12 +2,19 @@
 
 
 
+
+
 //javascript for edemam api/ cooking
-var queryURL = "https://api.edamam.com/search?q=salmon-teriyaki&app_id=dbf4510b&app_key=f6b010164002a524ec934d0070183bf6"
+//var queryURL = "https://api.edamam.com/search?q=salmon-teriyaki&app_id=dbf4510b&app_key=f6b010164002a524ec934d0070183bf6"
 
 $("#cook-button").on("click", function (event) {
+  if ($("#search").val().trim() !== "") {
+    
     event.preventDefault();
-$.ajax({
+
+    var food = $("#search").val().trim()
+    var queryURL = "https://api.edamam.com/search?q=" + food + "&app_id=dbf4510b&app_key=f6b010164002a524ec934d0070183bf6"
+    $.ajax({
   url: queryURL,
   method: "GET"
 })
@@ -15,8 +22,8 @@ $.ajax({
   .then(function(response) {
 
     
-    $("#edemam").text(response.hits[0].recipe.url)
-    $("#edemam").append("<img src='" + response.hits[0].recipe.image + "' >")
+    $("#results-display").text(response.hits[0].recipe.url)
+    $("#results-display").append("<img src='" + response.hits[0].recipe.image + "' >")
     
 
     // Log the resulting object
@@ -26,12 +33,30 @@ $.ajax({
   });
 
   // javascript for yelp/finding a restaraunt
-  var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=cold-noodles&location=philadelphia"
+  
+}
+});
 
-
-
-  $("#cook-button").on("click", function (event) {
+$("#book-button").on("click", function (event) {
+  if ($("#search").val().trim() !== "") {
     event.preventDefault();
+    $("#locationSearch").show();
+    
+  }
+  });
+
+  $("#book-button").on("click", function (event) {
+    if ($("#search").val().trim() !== "") {
+    
+      event.preventDefault();
+  
+      var food = $("#search").val().trim()
+      var city = $("#inputCity").val().trim()
+
+
+
+    var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?term=" + food + "&location=" + city
+
   $.ajax({
     url: queryURL,
     method: "GET",
@@ -41,6 +66,7 @@ $.ajax({
     },
     dataType: 'json',
     
+
   })
  
     .then(function(response) {
@@ -48,11 +74,11 @@ $.ajax({
   
       // $("#edemam").text(response.hits[0].recipe.url)
       // $("#edemam").append("<img src='" + response.hits[0].recipe.image + "' >")
-      $("#yelp").text(response.businesses[0].name);
-      $("#yelp").append(response.businesses[0].phone);
-      $("#yelp").append(response.businesses[0].location.address1);
-      $("#yelp").append("<img src='" + response.businesses[0].image_url + "' />" );
-      $("#yelp").append(response.businesses[0].rating);
+      $("#results-display").text(response.businesses[0].name);
+      $("#results-display").append(response.businesses[0].phone);
+      $("#results-display").append(response.businesses[0].location.address1);
+      $("#results-display").append("<img src='" + response.businesses[0].image_url + "' />" );
+      $("#results-display").append(response.businesses[0].rating);
 
 
       
@@ -60,4 +86,8 @@ $.ajax({
       console.log(response);
 
 
-    });
+    })
+  }
+});
+
+
