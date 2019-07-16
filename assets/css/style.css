@@ -5,23 +5,77 @@ body {
     background-size: cover;
 }
 
+.header {
+    border: 1px solid teal;
+    margin-left: auto;
+    margin-right: auto;
+    height: 185px;
+    width: 569px;
+    padding: 60px;
+    text-align: center;
+    color: black;
+    font-family: 'Notable', sans-serif;
+    font-size: xx-large;
+    font-weight: bold;
+    background: url(../images/Fork-adn-Knife_1.gif);
+    background-position: center;
+    background-size: cover;
+}
+
 .search-box{
     position:absolute;
-    left:21%;
-    top:33%;
+    left:22%;
+    top:35%;
     width:56%;
     background-color:white;
     color:grey;
 }
 
 #search {
-    position:absolute;
-    left:21%;
-    top:73%;
-    width:56%;
+    position:relative;
+    left:auto;
+    width:98%;
     margin: 6px;
 }
 
-#city-buttons {
+.both-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 145px;
+}
+
+#cook-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background: url(../images/fire2.gif);
+    background-position: right;
+    border-radius: 999px;
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 5px 10px 18px rgb(243, 160, 6);
+}
+
+#book-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background: url(../images/bgcookbook.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 999px;
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 5px 10px 18px rgb(84, 196, 121);
+}
+
+#locationSearch {
     display: none;
 }
