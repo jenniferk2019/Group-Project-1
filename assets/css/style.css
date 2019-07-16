@@ -8,7 +8,7 @@ body {
 .search-box{
     position:absolute;
     left:21%;
-    top:73%;
+    top:33%;
     width:56%;
     background-color:white;
     color:grey;
@@ -20,4 +20,8 @@ body {
     top:73%;
     width:56%;
     margin: 6px;
+}
+
+#city-buttons {
+    display: none;
 }
