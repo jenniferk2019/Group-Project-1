@@ -45,8 +45,8 @@ $("#book-button").on("click", function (event) {
   }
   });
 
-  $("#book-button").on("click", function (event) {
-    if ($("#search").val().trim() !== "") {
+  $("#cityButton").on("click", function (event) {
+    if ($("#inputCity").val().trim() !== "") {
     
       event.preventDefault();
   
