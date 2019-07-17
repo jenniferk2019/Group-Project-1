@@ -218,5 +218,31 @@ body {
 
 .yelpPic {
   max-height: 200px;
-  max-width: 300px;
+  padding: 20px;
+}
+
+#resultsContainer {
+
+}
+
+.nameDiv {
+    float: right;
+    color: yellow;
+}
+
+.phoneDiv {
+    float: right;
+    color: yellow;
+}
+.locationDiv {
+    float: right;
+    color: yellow;
+}
+.ratingDiv {
+    float: right;
+    color: yellow;
+}
+
+.addedRow {
+    float: left;
 }

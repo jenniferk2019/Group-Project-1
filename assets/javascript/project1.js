@@ -85,17 +85,17 @@ $("#cityButton").on("click", function (event) {
 
           var name = $("<div>");
           name.text(response.businesses[i].name);
-          name.attr("id, nameDiv");
+          name.addClass("nameDiv");
           
       
           var phone = $("<div>");
           phone.text("Phone #: " + response.businesses[i].phone);
-          phone.attr("id, phoneDiv");
+          phone.addClass("phoneDiv");
           
       
           var location = $("<div>");
           location.text(response.businesses[0].location.address1);
-          location.attr("id, locationDiv");
+          location.addClass("locationDiv");
           
       
           var image_url = $("<img src='" + response.businesses[i].image_url + "' />");
@@ -104,11 +104,12 @@ $("#cityButton").on("click", function (event) {
       
           var rating = $("<div>");
           rating.text("Rating: " + response.businesses[i].rating + "/5");
-          rating.attr("id, ratingDiv");
+          rating.addClass("ratingDiv");
           
       
           var newRow = $("<row>");
           newRow.append(name, phone, location, rating, image_url);
+          newRow.addClass("addedRow")
           $("#results-display").append(newRow);
           }
             // Log the resulting object
