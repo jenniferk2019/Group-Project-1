@@ -25,6 +25,12 @@ body {
     margin-right: auto;
 }
 
+#refresh {
+        color: black;
+        background-color: transparent;
+        text-decoration: none;
+}
+
  .search-box{
     margin: 0 auto;
     margin-top: 20px;
