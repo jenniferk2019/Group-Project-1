@@ -228,30 +228,43 @@ body {
 .yelpPic {
   max-height: 200px;
   padding: 20px;
+  /* float: left;
+  clear: both; */
 }
-
-#resultsContainer {
-
-}
-
+/*
 .nameDiv {
-    float: right;
-    color: yellow;
+    float: none;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    clear: both;
 }
 
 .phoneDiv {
-    float: right;
+    float: none;
     color: yellow;
+    text-align: center;
+    overflow: hidden;
+    clear: both;
+
 }
 .locationDiv {
-    float: right;
+    float: none;
     color: yellow;
+    text-align: center;
+    overflow: hidden;
+    clear: both;
+
 }
 .ratingDiv {
-    float: right;
+    float: none;
     color: yellow;
-}
+    text-align: center;
+    overflow: hidden;
+    clear: both; */
 
-.addedRow {
-    float: left;
-}
+/* } */
+
+/* .addedRow {
+    float: none;
+} */
