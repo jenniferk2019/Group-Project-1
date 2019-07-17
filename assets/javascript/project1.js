@@ -1,3 +1,20 @@
+// Firebase Configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyCO3GWGFUQE5CjCYpAb346YB8OnibRRC-I",
+  authDomain: "mattsproject-54627.firebaseapp.com",
+  databaseURL: "https://mattsproject-54627.firebaseio.com",
+  projectId: "mattsproject-54627",
+  storageBucket: "mattsproject-54627.appspot.com",
+  messagingSenderId: "1015675607617",
+  appId: "1:1015675607617:web:ba6417b6a5bbac8f"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+var database = firebase.database();
+
+
+
 //javascript for edemam api/ cooking
 
 // cook button click functionality
@@ -16,24 +33,30 @@ $("#cook-button").on("click", function (event) {
       // after call gets response
       .then(function (response) {
 
-        for (i = 0; i < 5; i++){
+        for (var i = 0; i < 5; i++){
 
-
+      //gives id and text for the name of the food
        var foodName = $("<div>");
-       foodName.text(response.hits[0].recipe.label);
-       foodName.attr("id", "foodRatingDiv");
+       foodName.text(response.hits[i].recipe.label);
+       foodName.attr("id", '"recName' + i + '"');
 
-       var foodPic = $("<img src='" + response.hits[0].recipe.image + "' >");
-       foodPic.addClass("foodPic")
+        // gives id, class and display food image
+       var foodPic = $("<img src='" + response.hits[i].recipe.image + "' id='recPic" + i + "' >");
+       foodPic.addClass("foodPic");
 
+       //gives id and link for the recipe of the food
        var foodRecipe = $("<div>");
-       foodRecipe.append("<a href='" + response.hits[0].recipe.url + "' target='_blank'>CLICK HERE FOR THE RECIPE!</a>")
+       foodRecipe.append("<a href='" + response.hits[i].recipe.url + "' target='_blank'>CLICK HERE FOR THE RECIPE!</a>");
+       foodRecipe.attr("id", '"recLink' + i + '"');
+
+      //creates a favorite button and gives it an id for each food
+       var favButton = $("<button type='button' class='favButton' id='recFav" + i + "'>Recommend this!</button>")
        
+       // attaches all four previous elements and puts them into a row
        var newRow = $("<row>");
-       newRow.append(foodName, foodPic, foodRecipe);
+       newRow.append(foodName, foodPic, foodRecipe, favButton);
        $("#results-display").append(newRow);
         };
-
 
         // Log the 10 responses from the call
         console.log(response);
@@ -45,6 +68,14 @@ $("#cook-button").on("click", function (event) {
 
   }
 });
+//function for submitting info to database, submits name and link!
+$(document).on("click", ".favButton", function() {
+  event.preventDefault();
+
+  name = $()
+
+
+}
 // on click functionality for book button
 $("#book-button").on("click", function (event) {
   if ($("#search").val().trim() !== "") {
