@@ -170,3 +170,15 @@ $("#cityButton").on("click", function (event) {
   }
 });
 
+database.ref().on("child_added", function (snapshot) {
+  //variable for database response
+  var store = snapshot.val();
+  // creates row to add to table later
+  var tRow = $("<tr>");
+  // adds train name text
+  var recipeName = $("<td>").text(store.name);
+  var recipeLink = $("<td>").html("<a href='"+ store.link + "' target='_blank'>" + store.link + "</a>");
+  tRow.append(recipeName, recipeLink);
+
+  $("tbody").prepend(tRow);
+});
