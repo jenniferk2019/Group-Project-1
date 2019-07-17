@@ -16,11 +16,23 @@ $("#cook-button").on("click", function (event) {
       // after call gets response
       .then(function (response) {
 
-        // THIS WILL CHANGE
-        //displays 1st result from recipe call
-        $("#results-display").text(response.hits[0].recipe.url)
-        // displays first image from recipe call
-        $("#results-display").append("<img src='" + response.hits[0].recipe.image + "' >")
+        for (i = 0; i < 5; i++){
+
+
+       var foodName = $("<div>");
+       foodName.text(response.hits[0].recipe.label);
+       foodName.attr("id", "foodRatingDiv");
+
+       var foodPic = $("<img src='" + response.hits[0].recipe.image + "' >");
+       foodPic.addClass("foodPic")
+
+       var foodRecipe = $("<div>");
+       foodRecipe.append("<a href='" + response.hits[0].recipe.url + "' target='_blank'>CLICK HERE FOR THE RECIPE!</a>")
+       
+       var newRow = $("<row>");
+       newRow.append(foodName, foodPic, foodRecipe);
+       $("#results-display").append(newRow);
+        };
 
 
         // Log the 10 responses from the call
@@ -68,35 +80,37 @@ $("#cityButton").on("click", function (event) {
     })
 
         .then(function(response) {
-          var name = $("<div>")
-          name.text(response.businesses[0].name)
-          name.attr("id, nameDiv")
-          $("#results-display").append(name)
+
+          for (i = 0; i < 5; i++){
+
+          var name = $("<div>");
+          name.text(response.businesses[i].name);
+          name.attr("id, nameDiv");
+          
       
-          var phone = $("<div>")
-          phone.text(response.businesses[0].phone)
-          phone.attr("id, phoneDiv")
-          $("#results-display").append(phone)
+          var phone = $("<div>");
+          phone.text("Phone #: " + response.businesses[i].phone);
+          phone.attr("id, phoneDiv");
+          
       
-          var location = $("<div>")
-          location.text(response.businesses[0].location.address1)
-          location.attr("id, locationDiv")
-          $("#results-display").append(location)
+          var location = $("<div>");
+          location.text(response.businesses[0].location.address1);
+          location.attr("id, locationDiv");
+          
       
-          var image_url = $("<div>")
-          image_url.append("<img src='" + response.businesses[0].image_url + "' />")
-          image_url.attr("id, image_urlDiv")
-          $("#results-display").append(image_url)
+          var image_url = $("<img src='" + response.businesses[i].image_url + "' />");
+          image_url.addClass("yelpPic");
+         
       
-          var rating = $("<div>")
-          rating.text(response.businesses[0].rating)
-          rating.attr("id, ratingDiv")
-          $("#results-display").append(rating)
+          var rating = $("<div>");
+          rating.text("Rating: " + response.businesses[i].rating + "/5");
+          rating.attr("id, ratingDiv");
+          
       
-          var newRow = $("<row>")
-          newRow.append(name, phone, address1, rating, image_url)
-          $("#results-display").append(newRow)
-            
+          var newRow = $("<row>");
+          newRow.append(name, phone, location, rating, image_url);
+          $("#results-display").append(newRow);
+          }
             // Log the resulting object
             console.log(response);
       

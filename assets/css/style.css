@@ -142,3 +142,13 @@ body {
         width: 100%;
     }
   }
+
+.foodPic {
+    max-height: 200px;
+    max-width: 300px;
+}
+
+.yelpPic {
+  max-height: 200px;
+  max-width: 300px;
+}
