@@ -67,22 +67,40 @@ $("#cityButton").on("click", function (event) {
 
     })
 
-      .then(function (response) {
-
-        // THIS WILL CHANGE
-        // display information from first result of call, displays name, phone address business rating and an image
-        $("#results-display").text(response.businesses[0].name);
-        $("#results-display").append(response.businesses[0].phone);
-        $("#results-display").append(response.businesses[0].location.address1);
-        $("#results-display").append("<img src='" + response.businesses[0].image_url + "' />");
-        $("#results-display").append(response.businesses[0].rating);
-
-
-
-        // Log the resulting object
-        console.log(response);
-
-
+        .then(function(response) {
+          var name = $("<div>")
+          name.text(response.businesses[0].name)
+          name.attr("id, nameDiv")
+          $("#results-display").append(name)
+      
+          var phone = $("<div>")
+          phone.text(response.businesses[0].phone)
+          phone.attr("id, phoneDiv")
+          $("#results-display").append(phone)
+      
+          var location = $("<div>")
+          location.text(response.businesses[0].location.address1)
+          location.attr("id, locationDiv")
+          $("#results-display").append(location)
+      
+          var image_url = $("<div>")
+          image_url.append("<img src='" + response.businesses[0].image_url + "' />")
+          image_url.attr("id, image_urlDiv")
+          $("#results-display").append(image_url)
+      
+          var rating = $("<div>")
+          rating.text(response.businesses[0].rating)
+          rating.attr("id, ratingDiv")
+          $("#results-display").append(rating)
+      
+          var newRow = $("<row>")
+          newRow.append(name, phone, address1, rating, image_url)
+          $("#results-display").append(newRow)
+            
+            // Log the resulting object
+            console.log(response);
+      
       })
   }
 });
+
