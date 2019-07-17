@@ -82,54 +82,63 @@ body {
 
 @media screen and (min-width: 1100px) {
     .header {
-
+        overflow: hidden;
     }
     .search-box{
-
+        overflow: hidden;
     }
     #search {
-
+        overflow: hidden;
     }
     #cook-button {
-      background-color: lavender;
+        overflow: hidden;
     }
     #book-button {
-
+        overflow: hidden;
     }
   }
 
   @media screen and (min-width: 600px) {
     .header {
-
+        overflow: hidden;
     }
     .search-box {
-
+        overflow: hidden;
     }
     #search {
-
+        overflow: hidden;
     }
     #cook-button {
-      background-color: lavender;
+        overflow: hidden;
     }
     #book-button {
-
+        overflow: hidden;
     }
   }
 
   @media screen and (min-width: 300px) {
     .header {
-        
+        overflow: hidden;
+        float: left;
+        text-align: center;
+        padding: 14px 16px;
     }
     .search-box{
-
+        overflow: hidden;
+        float: left;
+        text-align: center;
+        padding: 14px 16px;
     }
     #search {
-
+        float: none;
+        width: 100%;
     }
     #cook-button {
-      background-color: lavender;
+        float: none;
+        width: 100%;
     }
     #book-button{
-
+        float: none;
+        width: 100%;
     }
   }
