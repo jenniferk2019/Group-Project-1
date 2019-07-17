@@ -1,12 +1,12 @@
 // Firebase Configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyCO3GWGFUQE5CjCYpAb346YB8OnibRRC-I",
-  authDomain: "mattsproject-54627.firebaseapp.com",
-  databaseURL: "https://mattsproject-54627.firebaseio.com",
-  projectId: "mattsproject-54627",
-  storageBucket: "mattsproject-54627.appspot.com",
-  messagingSenderId: "1015675607617",
-  appId: "1:1015675607617:web:ba6417b6a5bbac8f"
+  apiKey: "AIzaSyCPI4zDJJupPUAUhou8t-GtrA24WHahe1s",
+  authDomain: "cookbook-d8079.firebaseapp.com",
+  databaseURL: "https://cookbook-d8079.firebaseio.com",
+  projectId: "cookbook-d8079",
+  storageBucket: "cookbook-d8079.appspot.com",
+  messagingSenderId: "172042055074",
+  appId: "1:172042055074:web:91ef5364e42a1946"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -82,11 +82,11 @@ $(document).on("click", ".favButton", function() {
   var link = $(this).attr("data-recipeLink");
   console.log(link)
 
-  // var recommendRecipe = {
-  //   name: name,
-
-
-  // }
+  var recommendRecipe = {
+    name: name,
+    link: link
+  }
+  database.ref().push(recommendRecipe)
 
 
 });
