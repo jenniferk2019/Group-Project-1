@@ -33,22 +33,26 @@ $("#cook-button").on("click", function (event) {
       // after call gets response
       .then(function (response) {
 
-        for (i = 0; i < 5; i++){
+        for (var i = 0; i < 5; i++){
 
-
+      //gives id and text for the name of the food
        var foodName = $("<div>");
-       foodName.text(response.hits[0].recipe.label);
+       foodName.text(response.hits[i].recipe.label);
        foodName.attr("id", '"recName' + i + '"');
 
+        // gives id, class and display food image
        var foodPic = $("<img src='" + response.hits[i].recipe.image + "' id='recPic" + i + "' >");
        foodPic.addClass("foodPic");
 
+       //gives id and link for the recipe of the food
        var foodRecipe = $("<div>");
        foodRecipe.append("<a href='" + response.hits[i].recipe.url + "' target='_blank'>CLICK HERE FOR THE RECIPE!</a>");
        foodRecipe.attr("id", '"recLink' + i + '"');
 
+      //creates a favorite button and gives it an id for each food
        var favButton = $("<button type='button' class='favButton' id='recFav" + i + "'>Recommend this!</button>")
        
+       // attaches all four previous elements and puts them into a row
        var newRow = $("<row>");
        newRow.append(foodName, foodPic, foodRecipe, favButton);
        $("#results-display").append(newRow);
@@ -64,6 +68,14 @@ $("#cook-button").on("click", function (event) {
 
   }
 });
+//function for submitting info to database, submits name and link!
+$(document).on("click", ".favButton", function() {
+  event.preventDefault();
+
+  name = $()
+
+
+}
 // on click functionality for book button
 $("#book-button").on("click", function (event) {
   if ($("#search").val().trim() !== "") {
