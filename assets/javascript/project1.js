@@ -19,6 +19,9 @@ var database = firebase.database();
 
 // cook button click functionality
 $("#cook-button").on("click", function (event) {
+  $("#resultsContainer").html("");
+  $("#resultsContainer").html("<div id='results-display'></div>");
+
   //if statement to prevent blank search
   if ($("#search").val().trim() !== "") {
     event.preventDefault();
@@ -98,6 +101,8 @@ $("#book-button").on("click", function (event) {
 });
 // on click functionality for city search
 $("#cityButton").on("click", function (event) {
+  $("#resultsContainer").html("");
+  $("#resultsContainer").html("<div id='results-display'></div>");
   if ($("#inputCity").val().trim() !== "") {
 
     event.preventDefault();
