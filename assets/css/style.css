@@ -5,12 +5,9 @@ body {
     background-size: cover;
 }
 
-.header {
+#header {
     border: 1px solid teal;
-    margin-left: auto;
-    margin-right: auto;
     height: 185px;
-    width: 569px;
     padding: 60px;
     text-align: center;
     color: black;
@@ -21,8 +18,14 @@ body {
     background-size: contain;
 }
 
-.search-box{
-    position:absolute;
+#header h1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ .search-box{
+    margin: 0 auto;
+    margin-top: 20px;
     left:22%;
     top:35%;
     width:56%;
@@ -35,21 +38,16 @@ body {
     left:auto;
     width:98%;
     margin: 6px;
-}
+} 
 
-
-.both-buttons {
+#both-buttons {
+    margin: 0 auto;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 145px;
 }
 
 #cook-button {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 200px;
     height: 50px;
     background: url(../images/fire-2.gif);
@@ -61,10 +59,6 @@ body {
 }
 
 #book-button {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 200px;
     height: 50px;
     background: url(../images/bgif.gif);
@@ -108,38 +102,71 @@ body {
     #search {
         overflow: hidden;
     }
+
     #cook-button {
-        overflow: hidden;
+        display: inline-block;
+        background: url(../images/fire-2.gif);
+        background-position: center;
+        border-radius: 999px;
+        font-size: large;
+        font-weight: bold;
+        box-shadow: 5px 10px 18px rgb(243, 160, 6);
     }
+
     #book-button {
-        overflow: hidden;
+        display: inline-block;
+        background: url(../images/bgif.gif);
+        background-position: center;
+        background-size: cover;
+        border-radius: 999px;
+        font-size: large;
+        font-weight: bold;
+        box-shadow: 5px 10px 18px rgb(84, 196, 121);
     }
   }
 
-  @media screen and (min-width: 300px) {
-    .header {
+  @media screen and (max-width: 375px) {
+    #header {
         overflow: hidden;
-        float: left;
-        text-align: center;
-        padding: 14px 16px;
-    }
-    .search-box{
-        overflow: hidden;
-        float: left;
-        text-align: center;
-        padding: 14px 16px;
-    }
-    #search {
         float: none;
-        width: 100%;
+        text-align: center;
+        padding: 14px;
+        width: auto;
+        height: auto;
+        text-align: center;
+        margin: 4px;
     }
+
     #cook-button {
-        float: none;
-        width: 100%;
+        display: inline-block;
+        background: url(../images/fire-2.gif);
+        background-position: center;
+        border-radius: 999px;
+        font-size: large;
+        font-weight: bold;
+        box-shadow: 5px 10px 18px rgb(243, 160, 6);
     }
-    #book-button{
+
+    #book-button {
+        display: inline-block;
+        background: url(../images/bgif.gif);
+        background-position: center;
+        background-size: cover;
+        border-radius: 999px;
+        font-size: large;
+        font-weight: bold;
+        box-shadow: 5px 10px 18px rgb(84, 196, 121);
+    }
+
+    .row {
+        overflow: hidden;
         float: none;
-        width: 100%;
+        text-align: center;
+        padding: 14px;
+        width: auto;
+        height: auto;
+        text-align: center;
+        margin: 4px;
     }
   }
 
