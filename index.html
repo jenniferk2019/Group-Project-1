@@ -5,13 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>🍴&ensp;Cook&nbsp;|&nbsp;Book&nbsp;📓</title>
+  <title>Cook&nbsp;🍴&nbsp;Book</title>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
   <link href="https://fonts.googleapis.com/css?family=Laila&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Notable&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Galada|Zilla+Slab+Highlight&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Galada|Kumar+One|Zilla+Slab+Highlight&display=swap" rel="stylesheet">
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
@@ -43,7 +45,6 @@
         </div>
       </div>
     </div>
-
     <div class="row">
       <div class="col-12">
         <div id="locationSearch">
@@ -61,10 +62,10 @@
   </div>
   <table class="table" id="results-table">
       <thead>
-        <tr>
-          <th>User Recommended Recipes!</th>
+        <tr id="table-head">
+          <th>Let's Cook It:</th>
         </tr>
-        <tr>
+        <tr id="table-title">
           <th scope="col">Dish Name</th>
           <th scope="col">Recipe Link</th>
         </tr>
