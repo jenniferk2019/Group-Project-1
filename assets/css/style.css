@@ -135,6 +135,24 @@ body {
     margin: 70px auto;
 }
 
+#b-top {
+    margin: 20px auto;
+    width: 200px;
+    height: 50px;
+    background: url(../images/bgrecipe.jpeg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 999px;
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 5px 10px 18px pink;
+    text-align: center;
+}
+
+#top-button {
+    text-align: center;
+}
+
 @media screen and (min-width: 1100px) {
     .header {
         overflow: hidden;
