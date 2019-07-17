@@ -1,3 +1,20 @@
+// Firebase Configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyCO3GWGFUQE5CjCYpAb346YB8OnibRRC-I",
+  authDomain: "mattsproject-54627.firebaseapp.com",
+  databaseURL: "https://mattsproject-54627.firebaseio.com",
+  projectId: "mattsproject-54627",
+  storageBucket: "mattsproject-54627.appspot.com",
+  messagingSenderId: "1015675607617",
+  appId: "1:1015675607617:web:ba6417b6a5bbac8f"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+var database = firebase.database();
+
+
+
 //javascript for edemam api/ cooking
 
 // cook button click functionality
@@ -21,19 +38,21 @@ $("#cook-button").on("click", function (event) {
 
        var foodName = $("<div>");
        foodName.text(response.hits[0].recipe.label);
-       foodName.attr("id", "foodRatingDiv");
+       foodName.attr("id", '"recName' + i + '"');
 
-       var foodPic = $("<img src='" + response.hits[0].recipe.image + "' >");
-       foodPic.addClass("foodPic")
+       var foodPic = $("<img src='" + response.hits[i].recipe.image + "' id='recPic" + i + "' >");
+       foodPic.addClass("foodPic");
 
        var foodRecipe = $("<div>");
-       foodRecipe.append("<a href='" + response.hits[0].recipe.url + "' target='_blank'>CLICK HERE FOR THE RECIPE!</a>")
+       foodRecipe.append("<a href='" + response.hits[i].recipe.url + "' target='_blank'>CLICK HERE FOR THE RECIPE!</a>");
+       foodRecipe.attr("id", '"recLink' + i + '"');
+
+       var favButton = $("<button type='button' class='favButton' id='recFav" + i + "'>Recommend this!</button>")
        
        var newRow = $("<row>");
-       newRow.append(foodName, foodPic, foodRecipe);
+       newRow.append(foodName, foodPic, foodRecipe, favButton);
        $("#results-display").append(newRow);
         };
-
 
         // Log the 10 responses from the call
         console.log(response);
