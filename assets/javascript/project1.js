@@ -75,7 +75,7 @@ $(document).on("click", ".favButton", function() {
   name = $()
 
 
-}
+});
 // on click functionality for book button
 $("#book-button").on("click", function (event) {
   if ($("#search").val().trim() !== "") {
