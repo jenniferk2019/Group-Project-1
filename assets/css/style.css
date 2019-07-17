@@ -168,4 +168,14 @@ body {
         text-align: center;
         margin: 4px;
     }
+  }
+
+.foodPic {
+    max-height: 200px;
+    max-width: 300px;
+}
+
+.yelpPic {
+  max-height: 200px;
+  max-width: 300px;
 }
