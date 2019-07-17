@@ -114,17 +114,17 @@ $("#cityButton").on("click", function (event) {
 
           for (i = 0; i < 5; i++){
 
-          var name = $("<div>");
+          var name = $("<p>");
           name.text(response.businesses[i].name);
           name.addClass("nameDiv");
           
       
-          var phone = $("<div>");
+          var phone = $("<p>");
           phone.text("Phone #: " + response.businesses[i].phone);
           phone.addClass("phoneDiv");
           
       
-          var location = $("<div>");
+          var location = $("<p>");
           location.text(response.businesses[0].location.address1);
           location.addClass("locationDiv");
           
@@ -133,13 +133,17 @@ $("#cityButton").on("click", function (event) {
           image_url.addClass("yelpPic");
          
       
-          var rating = $("<div>");
+          var rating = $("<p>");
           rating.text("Rating: " + response.businesses[i].rating + "/5");
           rating.addClass("ratingDiv");
           
-      
-          var newRow = $("<row>");
-          newRow.append(name, phone, location, rating, image_url);
+          var colOne = $("<div class='col text-right'>");
+          var colTwo = $("<div class='col text-left'>");
+          var newRow = $("<div class='row'>");
+          console.log(newRow);
+          colOne.append(image_url);
+          colTwo.append(name, phone, location, rating);
+          newRow.append(colOne, colTwo);
           newRow.addClass("addedRow")
           $("#results-display").append(newRow);
           }
