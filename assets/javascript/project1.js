@@ -51,7 +51,9 @@ $("#cook-button").on("click", function (event) {
 
       //creates a favorite button and gives it an id for each food
        var favButton = $("<button type='button' class='favButton' id='recFav" + i + "'>Recommend this!</button>")
-       
+       favButton.attr("data-recipeName", response.hits[i].recipe.label);
+       favButton.attr("data-recipeLink", response.hits[i].recipe.url);
+
        // attaches all four previous elements and puts them into a row
        var newRow = $("<row>");
        newRow.append(foodName, foodPic, foodRecipe, favButton);
@@ -72,7 +74,16 @@ $("#cook-button").on("click", function (event) {
 $(document).on("click", ".favButton", function() {
   event.preventDefault();
 
-  name = $()
+  var name = $(this).attr("data-recipeName");
+  console.log(name)
+  var link = $(this).attr("data-recipeLink");
+  console.log(link)
+
+  // var recommendRecipe = {
+  //   name: name,
+
+
+  // }
 
 
 });
