@@ -3,10 +3,12 @@ body {
     background-image: url(../images/bgcookbook.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed; 
 }
 
 #header {
-    border: 1px solid teal;
+    border-bottom: 3px solid gray;
+    box-shadow: 5px 10px 18px gray;
     height: 185px;
     padding: 60px;
     text-align: center;
@@ -28,16 +30,21 @@ body {
     margin-top: 20px;
     left:22%;
     top:35%;
+    height: 50px;
     width:56%;
     background-color:white;
     color:grey;
+    box-shadow: 5px 10px 18px teal;
+    border-radius: 999px;
 }
 
 #search {
     position:relative;
     left:auto;
-    width:98%;
+    height: 40px;
+    width:97%;
     margin: 6px;
+    border-radius: inherit;
 } 
 
 #both-buttons {
@@ -72,6 +79,40 @@ body {
 
 #locationSearch {
     display: none;
+    margin: 0 auto;
+    margin-top: 20px;
+    left:22%;
+    top:35%;
+    height: 50px;
+    width:56%;
+    background-color:white;
+    color:grey;
+    box-shadow: 5px 10px 18px teal;
+    border-radius: 999px;
+}
+
+#inputCity {
+    position:relative;
+    left:auto;
+    height: 40px;
+    width:97%;
+    margin: 6px;
+    border-radius: inherit;
+}
+
+#cityButton {
+    margin: 20px auto;
+    width: 200px;
+    height: 50px;
+    background: url(../images/mapgif.gif);
+    background-position: center;
+    background-size: cover;
+    border-radius: 999px;
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 5px 10px 18px yellow;
+    display: flex;
+    align-items: center;
 }
 
 @media screen and (min-width: 1100px) {
