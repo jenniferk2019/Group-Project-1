@@ -10,7 +10,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-
+//sets variable for the database call
 var database = firebase.database();
 
 
@@ -19,7 +19,7 @@ var database = firebase.database();
 
 // cook button click functionality
 $("#cook-button").on("click", function (event) {
-  $("#resultsContainer").html("");
+  //clears the results from the display and replaces them with a div to append new display to
   $("#resultsContainer").html("<div id='results-display'></div>");
 
   //if statement to prevent blank search
@@ -35,7 +35,7 @@ $("#cook-button").on("click", function (event) {
     })
       // after call gets response
       .then(function (response) {
-
+        //for loop to display 5 recommendations
         for (var i = 0; i < 5; i++) {
 
           //gives id and text for the name of the food
@@ -58,14 +58,17 @@ $("#cook-button").on("click", function (event) {
 
           //creates a favorite button and gives it an id for each food
           var favButton = $("<button type='button' class='favButton' id='recFav" + i + "'>Recommend this!</button>");
+          //gives name and link attributes so they can be sent to database later
           favButton.attr("data-recipeName", response.hits[i].recipe.label);
           favButton.attr("data-recipeLink", response.hits[i].recipe.url);
           favButton.addClass("favButtonDiv")
 
+          // variables for sorting results into columns
           var collOne = $("<div class='col text-right'>");
           var collTwo = $("<div class='col text-left'>");
           var newRow = $("<div class='row'>");
-          console.log(newRow);
+
+          //appends created elements to display 
           collOne.append(foodPic);
           collTwo.append(foodName, foodRecipe, favButton);
           newRow.append(collOne, collTwo);
@@ -73,31 +76,27 @@ $("#cook-button").on("click", function (event) {
           $("#results-display").append(newRow);
           $("#results-display").append("<hr class='divide-line'>");
 
-          // attaches all four previous elements and puts them into a row
         };
-          // Log the 10 responses from the call
-          console.log(response);
+        // Log the 10 responses from the call
+        console.log(response);
 
-
-    });
-
-    // javascript for yelp/finding a restaraunt
+      });
 
   }
 });
 //function for submitting info to database, submits name and link!
 $(document).on("click", ".favButton", function () {
   event.preventDefault();
-
+  // retrieves the attributes from the buttons
   var name = $(this).attr("data-recipeName");
-  console.log(name)
   var link = $(this).attr("data-recipeLink");
-  console.log(link)
 
+// puts the button attributes in an object to be sent to the database
   var recommendRecipe = {
     name: name,
     link: link
   }
+  //adds new object to database
   database.ref().push(recommendRecipe)
 
 
@@ -106,14 +105,14 @@ $(document).on("click", ".favButton", function () {
 $("#book-button").on("click", function (event) {
   if ($("#search").val().trim() !== "") {
     event.preventDefault();
-    // displays location search
+    // displays location search 
     $("#locationSearch").show();
 
   }
 });
 // on click functionality for city search
 $("#cityButton").on("click", function (event) {
-  $("#resultsContainer").html("");
+ //clears the results from the display and replaces them with a div to append to
   $("#resultsContainer").html("<div id='results-display'></div>");
   if ($("#inputCity").val().trim() !== "") {
 
@@ -139,32 +138,33 @@ $("#cityButton").on("click", function (event) {
     })
 
       .then(function (response) {
-
+        //loop to display the 5 results from the yelp api
         for (i = 0; i < 5; i++) {
 
-          var name = $("<p>");
-          name.text(response.businesses[i].name);
+          //creates display for restaurant name
+          var name = $("<div><a href='" + response.businesses[i].url + "' target='_blank'>" + response.businesses[i].name + "</a></div><br>");
           name.addClass("nameDiv");
 
-
+           //creates display for restaurant phone number
           var phone = $("<p>");
           phone.text("Phone #: " + response.businesses[i].phone);
           phone.addClass("phoneDiv");
 
-
+           //creates display for restaurant address
           var location = $("<p>");
           location.text(response.businesses[i].location.address1);
           location.addClass("locationDiv");
 
-
+           //creates display for restaurant picture
           var image_url = $("<img src='" + response.businesses[i].image_url + "' />");
           image_url.addClass("yelpPic");
 
-
+           //creates display for restaurant rating
           var rating = $("<p>");
           rating.text("Rating: " + response.businesses[i].rating + "/5");
           rating.addClass("ratingDiv");
 
+          //creates display for yelp information
           var colOne = $("<div class='col text-right'>");
           var colTwo = $("<div class='col text-left'>");
           var newRow = $("<div class='row'>");
@@ -183,19 +183,18 @@ $("#cityButton").on("click", function (event) {
   }
 });
 
+// calls to database to display the last 10 recommended recipes
+database.ref().limitToLast(10).on('child_added', function (snapshot) {
+  var store = snapshot.val();
+  // creates row to add to table later
+  var tRow = $("<tr>");
+  // creates an table division that is the name of the recipe and that name links to the recipe page
+  var recipeName = $("<td>").html("<a class='newRecipe' href='" + store.link + "' target='_blank'>" + store.name + "</a>");
+  recipeName.addClass("newRecipe");
 
-  database.ref().limitToLast(10).on('child_added', function(snapshot) {
-    var store = snapshot.val();
-    // creates row to add to table later
-    
-    var tRow = $("<tr>");
-   
-    var recipeName = $("<td>").html("<a class='newRecipe' href='" + store.link + "' target='_blank'>" + store.name + "</a>");
-    recipeName.addClass("newRecipe");
-    
-    tRow.append(recipeName);
-    
-    $("tbody").prepend(tRow);
- 
-  });
+  tRow.append(recipeName);
+
+  $("tbody").prepend(tRow);
+
+});
 
