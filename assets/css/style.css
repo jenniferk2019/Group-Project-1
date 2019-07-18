@@ -300,59 +300,63 @@ body {
 .yelpPic {
   max-height: 200px;
   padding: 20px;
-  /* float: left;
-  clear: both; */
 }
 
-/* #bottomButton {
-    margin: 0 auto;
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-} */
-
-/*
 .nameDiv {
-    float: none;
-    color: white;
-    text-align: center;
-    overflow: hidden;
-    clear: both;
+ color: black;
+ background-color: white;
+ max-width: 150px;
+ text-align: center;
+ border: solid;
+ border-color: grey;
+ font-size: 25px;
 }
 
 .phoneDiv {
-    float: none;
-    color: yellow;
+    background-color: whitesmoke;
+    font-size: 15px;
+    max-width: 210px;
     text-align: center;
-    overflow: hidden;
-    clear: both;
+    border: solid;
+    border-color: lightgrey;
+    border-radius: 25px;
+    text-align: center;
+   
 
 }
 .locationDiv {
-    float: none;
-    color: yellow;
+    background-color: whitesmoke;
+    font-size: 15px;
+    max-width: 210px;
     text-align: center;
-    overflow: hidden;
-    clear: both;
+    border: solid;
+    border-color: lightgrey;
+    border-radius: 25px;
+    text-align: center;
+    color: darkolivegreen;
 
 }
 .ratingDiv {
-    float: none;
-    color: yellow;
+    background-color: whitesmoke;
+    font-size: 15px;
+    max-width: 120px;
     text-align: center;
-    overflow: hidden;
-    clear: both; */
+    border: solid;
+    border-color: lightgrey;
+    border-radius: 25px;
+    text-align: center;
+    color: coral;
 
-/* } */
-
-/* .addedRow {
-    float: none;
-} */
+}
 
 .foodDiv {
     color: gold;
     font-size: 30px;
-
+    background-color: lightslategray;
+    max-width: 250px;
+    text-align: center;
+    border: solid;
+    border-color: white;
 } 
 .foodPic {
     float: none;
@@ -361,13 +365,25 @@ body {
     max-width: 300px;
 } 
 .foodRecipeDiv {
-    color: pink;
+    background-color: white;
+    max-width: 250px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 25px;
 
 } 
 .favButtonDiv {
     color: white;
     border-color: none;
-    background-color: lightgrey;
+    background-color: darkgrey;
     margin: 10px;
     border-radius: 25px;
+    text-align: center;
+}
+
+.divide-line {
+    border: 1px solid darkgray;
+    border-radius: 1px;
+    margin-left: 200px;
+    margin-right: 200px;
 }
