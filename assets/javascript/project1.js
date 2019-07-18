@@ -151,7 +151,7 @@ $("#cityButton").on("click", function (event) {
 
 
           var location = $("<p>");
-          location.text(response.businesses[0].location.address1);
+          location.text(response.businesses[i].location.address1);
           location.addClass("locationDiv");
 
 
@@ -166,7 +166,6 @@ $("#cityButton").on("click", function (event) {
           var colOne = $("<div class='col text-right'>");
           var colTwo = $("<div class='col text-left'>");
           var newRow = $("<div class='row'>");
-          console.log(newRow);
           colOne.append(image_url);
           colTwo.append(name, phone, location, rating);
           newRow.append(colOne, colTwo);
@@ -180,15 +179,19 @@ $("#cityButton").on("click", function (event) {
   }
 });
 
-database.ref().on("child_added", function (snapshot) {
-  //variable for database response
-  var store = snapshot.val();
-  // creates row to add to table later
-  var tRow = $("<tr>");
-  // adds train name text
-  var recipeName = $("<td>").html("<a class='newRecipe' href='" + store.link + "' target='_blank'>" + store.name + "</a>");
-  recipeName.addClass("newRecipe");
-  tRow.append(recipeName);
 
-  $("tbody").prepend(tRow);
-});
+  database.ref().limitToLast(10).on('child_added', function(snapshot) {
+    var store = snapshot.val();
+    // creates row to add to table later
+    
+    var tRow = $("<tr>");
+   
+    var recipeName = $("<td>").html("<a class='newRecipe' href='" + store.link + "' target='_blank'>" + store.name + "</a>");
+    recipeName.addClass("newRecipe");
+    
+    tRow.append(recipeName);
+    
+    $("tbody").prepend(tRow);
+ 
+  });
+
