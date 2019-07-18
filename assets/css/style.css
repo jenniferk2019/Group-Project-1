@@ -347,7 +347,11 @@ body {
 .foodDiv {
     color: gold;
     font-size: 30px;
-
+    background-color: lightslategray;
+    max-width: 250px;
+    text-align: center;
+    border: solid;
+    border-color: white;
 } 
 .foodPic {
     float: none;
@@ -356,13 +360,18 @@ body {
     max-width: 300px;
 } 
 .foodRecipeDiv {
-    color: pink;
+    background-color: white;
+    max-width: 250px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 25px;
 
 } 
 .favButtonDiv {
     color: white;
     border-color: none;
-    background-color: lightgrey;
+    background-color: darkgrey;
     margin: 10px;
     border-radius: 25px;
+    text-align: center;
 }
