@@ -343,3 +343,26 @@ body {
 /* .addedRow {
     float: none;
 } */
+
+.foodDiv {
+    color: gold;
+    font-size: 30px;
+
+} 
+.foodPic {
+    float: none;
+    margin: 45px;
+    max-height: 200px;
+    max-width: 300px;
+} 
+.foodRecipeDiv {
+    color: pink;
+
+} 
+.favButtonDiv {
+    color: white;
+    border-color: none;
+    background-color: lightgrey;
+    margin: 10px;
+    border-radius: 25px;
+}

@@ -36,45 +36,55 @@ $("#cook-button").on("click", function (event) {
       // after call gets response
       .then(function (response) {
 
-        for (var i = 0; i < 5; i++){
+        for (var i = 0; i < 5; i++) {
 
-      //gives id and text for the name of the food
-       var foodName = $("<div>");
-       foodName.text(response.hits[i].recipe.label);
-       foodName.attr("id", '"recName' + i + '"');
+          //gives id and text for the name of the food
+          var foodName = $("<div>");
+          foodName.text(response.hits[i].recipe.label);
+          foodName.attr("id", '"recName' + i + '"');
+          foodName.addClass("foodDiv")
 
-        // gives id, class and display food image
-       var foodPic = $("<img src='" + response.hits[i].recipe.image + "' id='recPic" + i + "' >");
-       foodPic.addClass("foodPic");
 
-       //gives id and link for the recipe of the food
-       var foodRecipe = $("<div>");
-       foodRecipe.append("<a href='" + response.hits[i].recipe.url + "' target='_blank'>CLICK HERE FOR THE RECIPE!</a>");
-       foodRecipe.attr("id", '"recLink' + i + '"');
+          // gives id, class and display food image
+          var foodPic = $("<img src='" + response.hits[i].recipe.image + "' id='recPic" + i + "' >");
+          foodPic.addClass("foodPic");
 
-      //creates a favorite button and gives it an id for each food
-       var favButton = $("<button type='button' class='favButton' id='recFav" + i + "'>Recommend this!</button>")
-       favButton.attr("data-recipeName", response.hits[i].recipe.label);
-       favButton.attr("data-recipeLink", response.hits[i].recipe.url);
+          //gives id and link for the recipe of the food
+          var foodRecipe = $("<div>");
+          foodRecipe.append("<a href='" + response.hits[i].recipe.url + "' target='_blank'>CLICK HERE FOR THE RECIPE!</a>");
+          foodRecipe.attr("id", '"recLink' + i + '"');
+          foodRecipe.addClass("foodRecipeDiv");
 
-       // attaches all four previous elements and puts them into a row
-       var newRow = $("<row>");
-       newRow.append(foodName, foodPic, foodRecipe, favButton);
-       $("#results-display").append(newRow);
+
+          //creates a favorite button and gives it an id for each food
+          var favButton = $("<button type='button' class='favButton' id='recFav" + i + "'>Recommend this!</button>");
+          favButton.attr("data-recipeName", response.hits[i].recipe.label);
+          favButton.attr("data-recipeLink", response.hits[i].recipe.url);
+          favButton.addClass("favButtonDiv")
+
+          var collOne = $("<div class='col text-right'>");
+          var collTwo = $("<div class='col text-left'>");
+          var newRow = $("<div class='row'>");
+          console.log(newRow);
+          collOne.append(foodPic);
+          collTwo.append(foodName, foodRecipe, favButton);
+          newRow.append(collOne, collTwo);
+          newRow.addClass("addedRow")
+          $("#results-display").append(newRow);
+          // attaches all four previous elements and puts them into a row
         };
+          // Log the 10 responses from the call
+          console.log(response);
 
-        // Log the 10 responses from the call
-        console.log(response);
 
-
-      });
+    });
 
     // javascript for yelp/finding a restaraunt
 
   }
 });
 //function for submitting info to database, submits name and link!
-$(document).on("click", ".favButton", function() {
+$(document).on("click", ".favButton", function () {
   event.preventDefault();
 
   var name = $(this).attr("data-recipeName");
@@ -126,33 +136,33 @@ $("#cityButton").on("click", function (event) {
 
     })
 
-        .then(function(response) {
+      .then(function (response) {
 
-          for (i = 0; i < 5; i++){
+        for (i = 0; i < 5; i++) {
 
           var name = $("<p>");
           name.text(response.businesses[i].name);
           name.addClass("nameDiv");
-          
-      
+
+
           var phone = $("<p>");
           phone.text("Phone #: " + response.businesses[i].phone);
           phone.addClass("phoneDiv");
-          
-      
+
+
           var location = $("<p>");
           location.text(response.businesses[0].location.address1);
           location.addClass("locationDiv");
-          
-      
+
+
           var image_url = $("<img src='" + response.businesses[i].image_url + "' />");
           image_url.addClass("yelpPic");
-         
-      
+
+
           var rating = $("<p>");
           rating.text("Rating: " + response.businesses[i].rating + "/5");
           rating.addClass("ratingDiv");
-          
+
           var colOne = $("<div class='col text-right'>");
           var colTwo = $("<div class='col text-left'>");
           var newRow = $("<div class='row'>");
@@ -162,10 +172,10 @@ $("#cityButton").on("click", function (event) {
           newRow.append(colOne, colTwo);
           newRow.addClass("addedRow")
           $("#results-display").append(newRow);
-          }
-            // Log the resulting object
-            console.log(response);
-      
+        }
+        // Log the resulting object
+        console.log(response);
+
       })
   }
 });
@@ -176,8 +186,8 @@ database.ref().on("child_added", function (snapshot) {
   // creates row to add to table later
   var tRow = $("<tr>");
   // adds train name text
-  var recipeName = $("<td>").html("<a class='newRecipe' href='"+ store.link + "' target='_blank'>" + store.name + "</a>");
-      recipeName.addClass("newRecipe");
+  var recipeName = $("<td>").html("<a class='newRecipe' href='" + store.link + "' target='_blank'>" + store.name + "</a>");
+  recipeName.addClass("newRecipe");
   tRow.append(recipeName);
 
   $("tbody").prepend(tRow);
