@@ -71,6 +71,8 @@ $("#cook-button").on("click", function (event) {
           newRow.append(collOne, collTwo);
           newRow.addClass("addedRow")
           $("#results-display").append(newRow);
+          $("#results-display").append("<hr class='divide-line'>");
+
           // attaches all four previous elements and puts them into a row
         };
           // Log the 10 responses from the call
@@ -151,7 +153,7 @@ $("#cityButton").on("click", function (event) {
 
 
           var location = $("<p>");
-          location.text(response.businesses[0].location.address1);
+          location.text(response.businesses[i].location.address1);
           location.addClass("locationDiv");
 
 
@@ -170,8 +172,10 @@ $("#cityButton").on("click", function (event) {
           colOne.append(image_url);
           colTwo.append(name, phone, location, rating);
           newRow.append(colOne, colTwo);
-          newRow.addClass("addedRow")
+          newRow.addClass("addedRow");
           $("#results-display").append(newRow);
+          $("#results-display").append("<hr class='divide-line'>");
+
         }
         // Log the resulting object
         console.log(response);
