@@ -176,9 +176,9 @@ database.ref().on("child_added", function (snapshot) {
   // creates row to add to table later
   var tRow = $("<tr>");
   // adds train name text
-  var recipeName = $("<td>").text(store.name);
-  var recipeLink = $("<td>").html("<a href='"+ store.link + "' target='_blank'>" + store.link + "</a>");
-  tRow.append(recipeName, recipeLink);
+  var recipeName = $("<td>").html("<a class='newRecipe' href='"+ store.link + "' target='_blank'>" + store.name + "</a>");
+      recipeName.addClass("newRecipe");
+  tRow.append(recipeName);
 
   $("tbody").prepend(tRow);
 });
