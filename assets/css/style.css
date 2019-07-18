@@ -51,6 +51,7 @@ body {
     width:98%;
     margin: 6px;
     border-radius: inherit;
+    cursor: url('https://cdn4.iconfinder.com/data/icons/momenticons-basic/32x32/search.png'), pointer;
 } 
 
 #both-buttons {
@@ -70,6 +71,7 @@ body {
     font-weight: bold;
     box-shadow: 5px 10px 18px rgb(243, 160, 6);
     text-shadow: 1px 1px white;
+    cursor: url('https://cdn4.iconfinder.com/data/icons/32x32-free-design-icons/32/Knife.png'), pointer;
 }
 
 #book-button {
@@ -83,6 +85,7 @@ body {
     font-weight: bold;
     box-shadow: 5px 10px 18px rgb(84, 196, 121);
     text-shadow: 1px 1px white;
+    cursor: url('https://cdn0.iconfinder.com/data/icons/hamburg/32/check.png'), pointer;
 }
 
 #locationSearch {
@@ -171,6 +174,7 @@ body {
     box-shadow: 5px 10px 18px pink;
     text-align: center;
     align-items: center;
+    cursor: url('https://cdn2.iconfinder.com/data/icons/drf/PNG/up_alt.png'), pointer;
 }
 
 #bottomButton {
