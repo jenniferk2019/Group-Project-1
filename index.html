@@ -14,6 +14,7 @@
   <link href="https://fonts.googleapis.com/css?family=Notable&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Galada|Zilla+Slab+Highlight&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Galada|Kumar+One|Zilla+Slab+Highlight&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
@@ -60,20 +61,25 @@
     <div id="resultsContainer">
     <div id="results-display"></div>
   </div>
-  <table class="table" id="results-table">
+  <table class="table table-responsive" id="results-table">
       <thead>
         <tr id="table-head">
           <th>Let's Cook It:</th>
         </tr>
         <tr id="table-title">
-          <th scope="col">Dish Name</th>
-          <th scope="col">Recipe Link</th>
+          <th scope="col">User Suggested Recipes:</th>
         </tr>
       </thead>
       <tbody>
       </tbody>
     </table>
-<a id="top-button" href="#top"><button id="b-top">Back to top</button></a>
+    <div class="row">
+        <div class="col-12">
+          <div id="bottomButton">
+              <a href="#top"><button id="b-top">Back to Top</button></a>
+          </div>
+        </div>
+      </div>
     <script src="assets/javascript/project1.js"></script>
 </body>
 
