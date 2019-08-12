@@ -1,5 +1,5 @@
 # Project1
-Group project for Matt, Josh and Jenn
+Group project for Jenn, Josh and Matt
 
 Welcome to the Cook/Book!
 
