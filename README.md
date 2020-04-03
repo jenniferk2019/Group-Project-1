@@ -16,3 +16,5 @@ Clicking the book button presents the user with and new bar for the user to type
 Recommended recipes
 -------------
 This section is present at the bottom of our page and is where the users can help one another with some recommended recipes! When the recommend button is clicked under the "Cook it!" option it sends the recipe data to our Firebase database. This section pulls that data from Firebase and presents the 10 latest recommendations to our list here. The list is dynamic so if the user recommends something they will immediately see it added to the list display and all future users will see those recommendations.
+
+https://jenniferk2019.github.io/Group-Project-1/
