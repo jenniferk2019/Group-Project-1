@@ -1,4 +1,4 @@
-# Project1
+# Project 1
 Team: Jenn, Josh and Matt
 
 Cook/Book Application
