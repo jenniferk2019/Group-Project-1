@@ -1,7 +1,7 @@
 # Project1
-Group project for Jenn, Josh and Matt
+Team: Jenn, Josh and Matt
 
-Welcome to the Cook/Book!
+Cook/Book Application
 
 The basis of our app is to provide you with food and restaurant recommendations based on your cravings. To use our site you can start by using the search bar in the middle to type in the food you currently want from pizza to pasta to paninis. Then you can make a decision, do you cook it or book it? 
 
